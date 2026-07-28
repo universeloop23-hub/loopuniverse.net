@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed": "#191c1d",
+                "inverse-surface": "#2f3133",
+                "on-secondary-fixed-variant": "#40484d",
+                "on-secondary-fixed": "#151d21",
+                "on-primary-container": "#0f172a",
+                "inverse-primary": "#93c5fd",
+                "surface-container-highest": "#e2e2e5",
+                "inverse-on-surface": "#f0f0f3",
+                "primary": "#a14000",
+                "surface": "#f9f9fc",
+                "background": "#f9f9fc",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#bfc8ce",
+                "tertiary-fixed": "#e1e3e4",
+                "on-tertiary-fixed-variant": "#454748",
+                "secondary-fixed": "#dbe4ea",
+                "on-surface": "#1a1c1e",
+                "surface-container": "#eeeef0",
+                "on-secondary-container": "#5d656b",
+                "on-primary-fixed-variant": "#1e3a8a",
+                "on-primary": "#ffffff",
+                "on-background": "#1a1c1e",
+                "surface-container-low": "#f3f3f6",
+                "surface-container-lowest": "#ffffff",
+                "secondary-container": "#dbe4ea",
+                "secondary": "#575f65",
+                "tertiary-container": "#939596",
+                "outline-variant": "#e0c0b2",
+                "surface-container-high": "#e8e8ea",
+                "tertiary-fixed-dim": "#c5c7c8",
+                "primary-fixed-dim": "#93c5fd",
+                "surface-variant": "#e2e2e5",
+                "on-error-container": "#93000a",
+                "outline": "#8c7166",
+                "surface-tint": "#a14000",
+                "surface-bright": "#f9f9fc",
+                "on-primary-fixed": "#172554",
+                "error-container": "#ffdad6",
+                "primary-container": "#0066FF",
+                "on-tertiary-container": "#2b2e2f",
+                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "primary-fixed": "#dbeafe",
+                "on-surface-variant": "#584238",
+                "surface-dim": "#dadadc",
+                "on-error": "#ffffff",
+                "tertiary": "#5c5f60"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "stack-lg": "48px",
+                "margin-mobile": "24px",
+                "stack-sm": "8px",
+                "container-max": "1280px",
+                "stack-xl": "96px",
+                "gutter": "32px",
+                "stack-md": "24px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "label-caps": ["JetBrains Mono"],
+                "headline-lg-mobile": ["Sora"],
+                "button": ["Sora"],
+                "body-md": ["Hanken Grotesk"],
+                "body-lg": ["Hanken Grotesk"],
+                "display-lg": ["Sora"],
+                "headline-md": ["Sora"],
+                "headline-lg": ["Sora"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"/></head><body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/70 backdrop-blur-md border-b border-surface-container">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Loop Universe</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<button class="bg-primary-container text-on-primary font-button text-button px-stack-md py-3 rounded hover:scale-95 transition-transform">Get Started</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-24">
+<!-- Hero Vision Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto overflow-hidden">
+<div class="flex flex-col gap-stack-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">About Loop Universe</span>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-display-lg leading-tight max-w-4xl">
+                    Visionary <span class="text-reveal cursor-default">Craft</span>.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-stack-sm">
+                    We fuse technical mastery with artistic vision to construct high-impact digital experiences. Driven by innovation, we empower forward-thinking brands to lead in an evolving digital world.
+                </p>
+</div>
+<div class="mt-stack-xl relative h-[400px] md:h-[600px] w-full overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A cinematic, high-angle shot of a minimalist, futuristic design studio in a light-mode aesthetic. Large floor-to-ceiling windows reveal a clean, bright city skyline. The interior features sleek white desks, high-end technical equipment, and subtle blue accent lighting that reflects off polished concrete floors. The atmosphere is professional, airy, and intensely focused on high-tech innovation." style='background-image: url("https://lh3.googleusercontent.com/aida/AP1WRLs57f9R1haqC1FtVUsRojcDG9Hj-rCmh1xj-3TI4wEmLAC8WZdgk1T7h9GuT_7-cC8y5KRZPX0Jz1_1sBYMduN1t0dEemkUgF3lmBWoLBwc8kOTfGXkvp-sZYrseqA_xc5pP3efXEsymJwpGAprEOzlv6ZCE_1dTqn6v-mCaDq5NTrQbPToTMvTaqxiX_RlzNh9ENTban9Gu3ks7p29lXpopobRp2xrxJhJsBK5Rhn-kjKnFoCTNmYjjMg"); background-size: cover; background-position: center center;'></div>
+<div class="absolute bottom-0 left-0 p-stack-md md:p-margin-desktop z-10 bg-gradient-to-t from-background to-transparent w-full">
+<div class="flex flex-wrap gap-stack-lg">
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-md text-primary">120+</span>
+<span class="font-label-caps text-label-caps">Projects Delivered</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-md text-primary">08</span>
+<span class="font-label-caps text-label-caps">Global Awards</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-md text-primary">15+</span>
+<span class="font-label-caps text-label-caps">Expert Architects</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Values Section (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+<div class="mb-stack-lg">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Our Core</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mt-stack-sm">Values that define Loop Universe.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Precision -->
+<div class="group p-stack-md border border-surface-container bg-surface hover:border-primary transition-all duration-500 flex flex-col justify-between h-[320px]">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Precision</h3>
+<p class="font-body-md text-on-surface-variant">Technical excellence isn't an option; it's our foundation. Every pixel is measured, every script is optimized for peak performance.</p>
+</div>
+<div class="w-full h-1 bg-surface-container overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+<!-- Innovation -->
+<div class="group p-stack-md border border-surface-container bg-surface hover:border-primary transition-all duration-500 flex flex-col justify-between h-[320px]">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Innovation</h3>
+<p class="font-body-md text-on-surface-variant">We don't just follow trends; we engineer them. We explore the intersection of Web3, AI, and UX to define the next digital frontier.</p>
+</div>
+<div class="w-full h-1 bg-surface-container overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+<!-- Momentum -->
+<div class="group p-stack-md border border-surface-container bg-surface hover:border-primary transition-all duration-500 flex flex-col justify-between h-[320px]">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-stack-sm" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Momentum</h3>
+<p class="font-body-md text-on-surface-variant">Continuous movement is the key to relevance. We iterate fast, learn faster, and keep our clients ahead of the curve.</p>
+</div>
+<div class="w-full h-1 bg-surface-container overflow-hidden">
+<div class="h-full bg-primary w-0 group-hover:w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- History Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-gutter items-center">
+<div class="w-full md:w-1/2">
+<div class="aspect-square bg-surface-container relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist photograph capturing a workspace of an engineer/designer. A high-resolution monitor displays complex wireframes and glowing blue UI elements. On the desk sits a single cup of black coffee and a high-end metal watch. The aesthetic is clean, moody, and highlights technical precision. Neutral gray tones dominate with sharp blue highlights." src="https://lh3.googleusercontent.com/aida/AP1WRLvWNKyuo7urWlt7rp9NjqZ-FMZR0Wn7oz152n19cx3ZDDW4hoH4BNbYUz1jI-L9oh4EAN4Dh86Z6eoHV737lrV5aPBmAvzXb4jTKskO9LnOpguhQ2KCXs2qRo5VJ0EMqMGXxEFRAJLB8vE1n-guNktPn64B3SOPdWKPt5IAiru12pM7hc4JcNS_nC9KbAQijD9veOGiJKNVVSqrDw_2ZDXeh6YmxMuldyOJwu1t0uyIrbINmsKmiLOsZEU"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex flex-col gap-stack-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Our History</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg">From a small lab to a global powerhouse.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Founded in 2018, Loop Universe began as a specialized software laboratory focusing on extreme UI performance. Our mission was simple: eliminate the friction between humans and machines through superior design engineering.
+                    </p>
+<p class="font-body-md text-on-surface-variant">
+                        Today, we partner with industry leaders and disruptive startups to build products that don't just work—they inspire. We have maintained our small-team agility while scaling our technical capabilities to support millions of concurrent users across our enterprise solutions.
+                    </p>
+<div class="mt-stack-sm">
+<a class="inline-flex items-center gap-2 font-button text-button text-on-surface group" href="#">
+<span class="">Read the full story</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl bg-inverse-surface text-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">The Minds</span>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg mt-stack-sm">Leadership behind the vision.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Leader 1 -->
+<div class="flex flex-col gap-stack-sm group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female tech leader with a visionary expression. She is wearing a modern black blazer. The lighting is sharp and cinematic, coming from the side to create high contrast. The background is a clean, neutral architectural space. The image looks like a high-end editorial portrait for a tech magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwcmDp_0DD1GOEDdaj7LJhLJrFf7T_rTEIcMBYrlDXTwT3htvSs81bwhH6fE5PMZjR8dOczzEsIl-Y9jeQmTVFbeOmHTwWwg8NIiwiRyu4TA2vrBhabaE7hu_irWuBTbbhpPqz33oE_brMc448DSyrI2mbswvhaJt-QfTMw3IzQMl4eLV3kI5WL4a3r2KCyUrrzVhZuQSWRsW0B-3LAqx28JbdaZhY-6KoeOHIhSZVlt4Qmq-zPS-2"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+</div>
+<h4 class="font-headline-md text-body-lg mt-stack-sm">Elena Voss</h4>
+<p class="font-label-caps text-label-caps text-primary">Chief Design Officer</p>
+</div>
+<!-- Leader 2 -->
+<div class="flex flex-col gap-stack-sm group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a male lead developer with a sharp, intelligent gaze. He is wearing a minimalist charcoal sweater. The lighting is modern and high-key, emphasizing a clean and precise tech aesthetic. Background is a blurred architectural glass wall with soft blue reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXPi132XdJdzcdxn6bATLgMpOEUf3jE0asaLxfWdN2jcLIsNvzlxUcWtsmNnTD7LUzj5Ak9fIXg2o3YobCitfyFGwjwFpEogGBfihpy8FIjTjUlmNQAAq6JqDtaKppfCe-poAJxj5Gk4xDboItHQ_TDoHIeuGFjVQoJxehcmg0oKK8bwhXMkPlIM1GUU249_eqI5OjTDZTwwucS5NFPEP0FO-VvIKmtfPw5K1OBIIuNf-nqzKOXkZN"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+</div>
+<h4 class="font-headline-md text-body-lg mt-stack-sm">Julian Aris</h4>
+<p class="font-label-caps text-label-caps text-primary">Director of Engineering</p>
+</div>
+<!-- Leader 3 -->
+<div class="flex flex-col gap-stack-sm group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a woman in leadership, looking confident and visionary. She wears a minimalist cream-colored outfit. High-end photography style with shallow depth of field. The lighting is soft but directed, highlighting her features against a bright, modern studio backdrop. Aesthetic matches a premium tech agency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCadcWAvCsMSTvcOkg2ow9FQ32he7AYA45X2spLu3PKAE3Pt7VDKIWsy9Y1574jyxL_MzYNkafNtL0J0gJY5t-QL_1pYLuBD6crpBWYbr2vUfGUhZivTfJcWs62GRLteVmPiDhTB3PIRbEvTMmI4duO4IMSWkQFvX5heYSiThqdXEv9afSEzbuI3cEY7gGTWdj-UsWK3AO6iB2gg2wFzb3KU077U-TrZZnkS5tadhuWYaRiCMcXScMK"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+</div>
+<h4 class="font-headline-md text-body-lg mt-stack-sm">Sarah Chen</h4>
+<p class="font-label-caps text-label-caps text-primary">Head of Strategy</p>
+</div>
+<!-- Leader 4 -->
+<div class="flex flex-col gap-stack-sm group">
+<div class="aspect-[3/4] bg-surface-container-low overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a male CTO in his late 30s. He has a thoughtful expression and is wearing a dark navy tech shirt. The lighting is cool-toned with a single warm blue light source from behind, creating a halo effect. The style is sharp, clean, and extremely high-definition, embodying the 'Engineered Creativity' brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdxMT8MyfPBnDycyVLbYITbwphwt3l4a0wP7kOSCMG7kMBvA88NA2SGyqUbV7geyCEPbiniaYT2VO7WOA6688bQUXG6fm439jTF1q3KtQNdC_WmVrYPMkg8nr42sqavIHDWy5PxwQqTpvSe7JAulniHjwFB4eC87gC21g_iFUYidHmTxF1PJFLn7OyyPon1os6wf1oZ6nw3BAG4rNFzlgF5n-ajcMMiEmKwQZv6PEi_-XlCXDD2JE0"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+</div>
+<h4 class="font-headline-md text-body-lg mt-stack-sm">Marcus Thorne</h4>
+<p class="font-label-caps text-label-caps text-primary">Chief Technology Officer</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto text-center">
+<div class="bg-surface p-stack-xl border border-surface-container relative overflow-hidden group">
+<div class="absolute -right-24 -top-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col items-center gap-stack-md">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg">Ready to experience Loop Universe?</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl mx-auto">Join the ranks of visionaries who choose engineered excellence over standard solutions.</p>
+<button class="bg-primary text-on-primary font-button text-button px-margin-mobile py-4 rounded hover:bg-primary/90 transition-all mt-stack-sm">Schedule a Consultation</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-xl px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md bg-inverse-surface">
+<div class="flex flex-col gap-2">
+<div class="font-headline-md text-headline-md font-bold text-surface">Loop Universe</div>
+<p class="font-body-md text-surface-dim">© 2024 Loop Universe. Engineered Creativity.</p>
+</div>
+<div class="flex gap-stack-md">
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">Instagram</a>
+</div>
+</footer>
+<script class="">
+        //</script></body></html>
+
+

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loop Universe | Engineered Creativity</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2f3133",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadadc",
+                    "primary-fixed": "#dbeafe",
+                    "surface-bright": "#f9f9fc",
+                    "surface-container-high": "#e8e8ea",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface": "#f9f9fc",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#eeeef0",
+                    "tertiary-fixed": "#e1e3e4",
+                    "outline-variant": "#e0c0b2",
+                    "primary-fixed-dim": "#93c5fd",
+                    "primary": "#a14000",
+                    "secondary-fixed": "#dbe4ea",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#151d21",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f9f9fc",
+                    "on-primary-fixed-variant": "#1e3a8a",
+                    "on-surface-variant": "#584238",
+                    "surface-variant": "#e2e2e5",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#5d656b",
+                    "secondary-container": "#dbe4ea",
+                    "inverse-primary": "#93c5fd",
+                    "surface-container-low": "#f3f3f6",
+                    "tertiary": "#5c5f60",
+                    "on-background": "#1a1c1e",
+                    "on-tertiary-fixed": "#191c1d",
+                    "on-primary-fixed": "#172554",
+                    "tertiary-fixed-dim": "#c5c7c8",
+                    "secondary": "#575f65",
+                    "surface-tint": "#a14000",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "on-tertiary-container": "#2b2e2f",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "outline": "#8c7166",
+                    "on-primary-container": "#0f172a",
+                    "primary-container": "#0066FF",
+                    "on-secondary-fixed-variant": "#40484d",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#939596",
+                    "secondary-fixed-dim": "#bfc8ce"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "stack-xl": "96px",
+                    "margin-mobile": "24px",
+                    "stack-sm": "8px",
+                    "container-max": "1280px",
+                    "stack-md": "24px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Sora"],
+                    "body-md": ["Hanken Grotesk"],
+                    "button": ["Sora"],
+                    "headline-lg-mobile": ["Sora"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .animate-underline {
+            position: relative;
+        }
+        .animate-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 50%;
+            background-color: #0066FF;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .animate-underline:hover::after {
+            width: 100%;
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px rgba(44, 52, 57, 0.08);
+        }
+        body {
+            background-color: #f9f9fc;
+            overflow-x: hidden;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, rgba(0, 102, 255, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-[64px] h-20 max-w-[1280px] mx-auto bg-surface/70 backdrop-blur-md border-b border-surface-container">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Loop Universe</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-white px-6 py-2.5 rounded font-button text-button hover:scale-95 transition-transform">
+                Get Started
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden hero-gradient">
+<div class="max-w-[1280px] mx-auto px-6 md:px-[64px] grid lg:grid-cols-2 gap-12 items-center w-full">
+<div class="z-10 space-y-stack-md">
+<div class="inline-block px-3 py-1 bg-primary/10 rounded-full">
+<span class="font-label-caps text-label-caps text-primary uppercase">Innovation First Agency</span>
+</div>
+<h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight text-on-surface max-w-xl">
+                        Elevating Work Through <span class="text-primary-container">Design</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        UI/UX &amp; Web Design for the Future of Tech. We engineer high-performance digital experiences that elevate brands and accelerate growth.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-white px-8 py-4 rounded font-button text-button hover:scale-105 transition-transform active:scale-95">
+                            Get Started
+                        </button>
+<button class="border-2 border-inverse-surface text-on-surface px-8 py-4 rounded font-button text-button hover:bg-inverse-surface hover:text-white transition-all">
+                            View Portfolio
+                        </button>
+</div>
+</div>
+<div class="relative lg:h-[600px] w-full hidden lg:block">
+<div class="absolute inset-0 bg-surface-container rounded-xl overflow-hidden custom-shadow">
+<img class="w-full h-full object-cover" data-alt="A high-tech abstract 3D render of floating crystalline structures and blue light beams, representing data flow and architectural precision. The lighting is bright and airy with a minimalist gallery feel, using a white and grey backdrop with vivid blue accents." src="https://lh3.googleusercontent.com/aida/AP1WRLs57f9R1haqC1FtVUsRojcDG9Hj-rCmh1xj-3TI4wEmLAC8WZdgk1T7h9GuT_7-cC8y5KRZPX0Jz1_1sBYMduN1t0dEemkUgF3lmBWoLBwc8kOTfGXkvp-sZYrseqA_xc5pP3efXEsymJwpGAprEOzlv6ZCE_1dTqn6v-mCaDq5NTrQbPToTMvTaqxiX_RlzNh9ENTban9Gu3ks7p29lXpopobRp2xrxJhJsBK5Rhn-kjKnFoCTNmYjjMg"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-8 -left-8 w-32 h-32 border border-primary/30 rounded-xl"></div>
+</div>
+</div>
+</section>
+<!-- Featured Work -->
+<section class="py-stack-xl max-w-[1280px] mx-auto px-6 md:px-[64px]">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-6">
+<div class="space-y-4">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Case Studies</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Featured Projects</h2>
+</div>
+<a class="font-button text-button text-primary animate-underline flex items-center gap-2" href="#">
+                    View All Work <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group project-card cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container mb-6 custom-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-500" data-alt="A sleek SaaS dashboard interface displayed on a high-resolution tablet mockup. The design features minimalist typography, soft shadows, and clean data visualizations using the brand's primary blue and neutral grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvkyNKRw-FT3XLZl6MfM87M_IHlZ6nHeNWgxxEdzwHopSirnDmXZKP6b9sgCxdNe3WcRTO-vaiyIoaZRD_0f28Ib_TQV3vNq30VmcGP2hH5WUUVRghCDq4-jwXMHLpohPMgp3UZ2flIuc3BV758CVOo_5w-2XsFzRAikOzbOJhhIcRF1P5Q5CE2HoE2A8P6LL64HzzKnmEmbrTuE0-uv5sCehhXYtrwXGO9PGOnK52ml8HAIYd6HgA"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary mb-2 block uppercase">Fintech Solution</span>
+<h3 class="font-headline-md text-[24px] mb-3 group-hover:text-primary transition-colors">Nova Capital Pro</h3>
+<p class="text-on-surface-variant font-body-md">Redefining digital banking with a focus on intuitive user journeys and accessibility.</p>
+</div>
+<!-- Project 2 -->
+<div class="group project-card cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container mb-6 custom-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-500" data-alt="A modern lifestyle e-commerce mobile app design showing high-quality product photography of minimalist tech accessories. The UI is clean, using ample whitespace and bold Sora font for headings, with blue accent buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSRIPBLmuOczSv6Kq1s-XoD4uldsFeWvVmhshwGm12o-l-63F7z9dpY_CCuAgK5hPxfEIupf7FoTeOB-aAY_FrtSA2qHzXFu28es89w3YC7v2peDxtuOo86EM9UL1VGSg_HIq94mJ6KRPmTX7knPiobLCX9J74Jwe_w5KLa6YXlTCUnXPOQY2VpmIo9Gyf26ASr2aSFYxH5kwjE27BNMJq3Gr4uU7DzziS4lS6x-m4bysmtVXaOUv"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary mb-2 block uppercase">E-Commerce</span>
+<h3 class="font-headline-md text-[24px] mb-3 group-hover:text-primary transition-colors">Lumina Gear</h3>
+<p class="text-on-surface-variant font-body-md">High-conversion retail experience engineered for a global audience of tech enthusiasts.</p>
+</div>
+<!-- Project 3 -->
+<div class="group project-card cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-xl bg-surface-container mb-6 custom-shadow">
+<img class="project-image w-full h-full object-cover transition-transform duration-500" data-alt="An abstract visualization of a cloud-based collaboration platform with isometric 3D illustrations. The color scheme is a professional mix of charcoal blue and vibrant blue, highlighting connectivity and speed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXNLVNRUzdfl2LRQEclJ1IInW_rFu2U2TmoZrkdQSzYZPl7PO6iH-bjNLgRcQTo4y7QhC-jiOVaWoJShyxaKFNOszdfQhDV4wOsh2_NlKLGEXbhACIII1RBZsfClZCJiZo2pyzTEidLMWT8JPpwveF00lV7SloeUtjmFTNZqPSRaog8UONeHN-VS5-Me72UCfFHTl-ERonZS_jO32kD0zxi24_eNuGGCYkOYj3IdXE5kh7bdRZ44Bs"/>
+</div>
+<span class="font-label-caps text-label-caps text-primary mb-2 block uppercase">Web Application</span>
+<h3 class="font-headline-md text-[24px] mb-3 group-hover:text-primary transition-colors">Syncro Workspace</h3>
+<p class="text-on-surface-variant font-body-md">A sophisticated platform for remote teams focusing on micro-interactions and performance.</p>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-stack-xl bg-inverse-surface text-surface relative"><div class="absolute inset-0 z-0 opacity-20"><img alt="Workspace background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtSCOP7nhRUguPnuU4-Z5aBlMcheAVoT5IuLxbtV1AzUXLvi9xFP3LnZsRYkwP1A_hqgKUp30zg6symTbAZ6Z-DhZxWmbtVIMf4SCs8vPDtdVqF3QQs2xf5LIZ0iKqI9jqGNoxbFRzmxf1zqAsf2yKUAEWBxMRUWIDj2aMgsEFf-fLlO6AALokGlQ9sduNM-RYKooWXEZT9GIEtOknUgIpb4tK6wk_7iKe6pPd7FXANLT-3z4zcxeg1T9s"/></div>
+<div class="max-w-[1280px] mx-auto px-6 md:px-[64px] relative z-10">
+<div class="grid lg:grid-cols-2 gap-stack-xl items-center">
+<div>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase mb-4 block">Expertise</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-md">Engineered Creative Services</h2>
+<p class="text-surface-variant font-body-lg mb-stack-lg max-w-lg">
+                            We don't just design; we architect digital systems that solve complex business challenges through precision and flair.
+                        </p>
+<button class="bg-primary text-white px-8 py-3 rounded font-button text-button hover:bg-primary-container transition-colors">
+                            How We Work
+                        </button>
+</div>
+<div class="grid gap-6">
+<!-- Service Card 1 -->
+<div class="p-8 border border-surface-variant/20 rounded-xl hover:bg-surface/5 transition-all group">
+<div class="flex items-start gap-6">
+<div class="text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">architecture</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] mb-2">UI/UX Design</h4>
+<p class="text-surface-variant">User-centric interfaces built on deep psychological research and modern interaction patterns.</p>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="p-8 border border-surface-variant/20 rounded-xl hover:bg-surface/5 transition-all group">
+<div class="flex items-start gap-6">
+<div class="text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">terminal</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] mb-2">Web Development</h4>
+<p class="text-surface-variant">High-performance, scalable codebases utilizing the latest tech stacks for seamless experiences.</p>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="p-8 border border-surface-variant/20 rounded-xl hover:bg-surface/5 transition-all group">
+<div class="flex items-start gap-6">
+<div class="text-primary-container">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">token</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[24px] mb-2">Brand Strategy</h4>
+<p class="text-surface-variant">Defining your digital identity to resonate with your core audience and stand out in the tech landscape.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us / Stats -->
+<section class="py-stack-xl max-w-[1280px] mx-auto px-6 md:px-[64px]">
+<div class="grid md:grid-cols-3 gap-12 text-center">
+<div class="space-y-4">
+<div class="text-primary text-[64px] font-display-lg">01</div>
+<h3 class="font-headline-md text-[24px]">High-Tech Precision</h3>
+<p class="text-on-surface-variant">Every pixel and line of code is meticulously crafted for maximum impact and technical efficiency.</p>
+</div>
+<div class="space-y-4">
+<div class="text-primary text-[64px] font-display-lg">02</div>
+<h3 class="font-headline-md text-[24px]">Kinetic Innovation</h3>
+<p class="text-on-surface-variant">We move fast without breaking things, ensuring your project launches ahead of the competition.</p>
+</div>
+<div class="space-y-4">
+<div class="text-primary text-[64px] font-display-lg">03</div>
+<h3 class="font-headline-md text-[24px]">Strategic Momentum</h3>
+<p class="text-on-surface-variant">Our design approach is rooted in business goals, driving measurable results and long-term value.</p>
+</div>
+</div>
+</section>
+<!-- Testimonial Slider (Simplified JS for demo) -->
+<section class="py-stack-xl bg-surface-container-low overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-6 md:px-[64px]">
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
+<span class="material-symbols-outlined text-primary text-5xl">format_quote</span>
+<div class="transition-opacity duration-500" id="testimonial-container">
+<p class="font-headline-md text-headline-md leading-relaxed italic">
+                            "Loop Universe didn't just build us a website; they engineered a digital platform that transformed our brand's perception in the market."
+                        </p>
+<div class="mt-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-4 bg-surface-container-high border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a tech executive, smiling warmly, in a high-key office environment. The image is crisp, modern, and perfectly captures a sense of leadership and satisfaction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfCnW0aLfCL68VUApB-ZMBXEP2YDZqXXfkfTycx6WDgfLMOmLUW_hplLu2Bi92YO54PTaQpJb-4yuc7k0eNDeLh9hPbEggwHRJERqFIce2QYk1JdWHD_PMLnmZe60oWq4ueF8LgJbqqCqtZNg6a-ihMdwApbR8k1vkpSkP4maK9N26SUcpW4dR_5SmrOQX--nW9iWoruI_RGx_WIlsMR48CxyrFvq5c4KRIcoEIBwFONguoKn03zjN"/>
+</div>
+<h5 class="font-bold text-lg">Alex Chen</h5>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CTO, Vertex Solutions</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl max-w-[1280px] mx-auto px-6 md:px-[64px]">
+<div class="bg-primary-container rounded-3xl p-12 md:p-24 text-center text-white relative overflow-hidden custom-shadow">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+<span class="material-symbols-outlined text-[400px] -mr-32 -mt-32">trending_up</span>
+</div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white">Ready to Elevate Your Brand with Loop Universe?</h2>
+<p class="font-body-lg text-white/90 max-w-xl mx-auto">
+                        Let's discuss how our engineered creativity can accelerate your digital future.
+                    </p>
+<button class="bg-white text-primary font-bold px-10 py-4 rounded font-button text-button hover:bg-surface transition-colors shadow-lg">
+                        Schedule a Consultation
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-xl px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md bg-inverse-surface dark:bg-surface-container-lowest">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="font-headline-md text-headline-md font-bold text-surface dark:text-on-surface">Loop Universe</div>
+<p class="font-body-md text-body-md text-surface-dim dark:text-on-surface-variant text-center md:text-left">© 2024 Loop Universe. Engineered Creativity.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex gap-6">
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-white transition-colors font-label-caps text-label-caps uppercase" href="#">Privacy Policy</a>
+<a class="text-surface-dim dark:text-on-surface-variant hover:text-white transition-colors font-label-caps text-label-caps uppercase" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded bg-white/10 flex items-center justify-center text-surface hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded bg-white/10 flex items-center justify-center text-surface hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined">hub</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions for demo
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Add a scroll effect for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+                header.classList.add('h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+        });
+    </script>
+</body></html>
+
+

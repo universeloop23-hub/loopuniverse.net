@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#191c1d",
+                        "inverse-surface": "#2f3133",
+                        "on-secondary-fixed-variant": "#40484d",
+                        "on-secondary-fixed": "#151d21",
+                        "on-primary-container": "#0f172a",
+                        "inverse-primary": "#93c5fd",
+                        "surface-container-highest": "#e2e2e5",
+                        "inverse-on-surface": "#f0f0f3",
+                        "primary": "#a14000",
+                        "surface": "#f9f9fc",
+                        "background": "#f9f9fc",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#bfc8ce",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "secondary-fixed": "#dbe4ea",
+                        "on-surface": "#1a1c1e",
+                        "surface-container": "#eeeef0",
+                        "on-secondary-container": "#5d656b",
+                        "on-primary-fixed-variant": "#1e3a8a",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1e",
+                        "surface-container-low": "#f3f3f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#dbe4ea",
+                        "secondary": "#575f65",
+                        "tertiary-container": "#939596",
+                        "outline-variant": "#e0c0b2",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "primary-fixed-dim": "#93c5fd",
+                        "surface-variant": "#e2e2e5",
+                        "on-error-container": "#93000a",
+                        "outline": "#8c7166",
+                        "surface-tint": "#a14000",
+                        "surface-bright": "#f9f9fc",
+                        "on-primary-fixed": "#172554",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#0066FF",
+                        "on-tertiary-container": "#2b2e2f",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dbeafe",
+                        "on-surface-variant": "#584238",
+                        "surface-dim": "#dadadc",
+                        "on-error": "#ffffff",
+                        "tertiary": "#5c5f60"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "margin-mobile": "24px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-xl": "96px",
+                        "gutter": "32px",
+                        "stack-md": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Sora"],
+                        "button": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><meta charset="utf-8"/></head><body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/70 backdrop-blur-md border-b border-surface-container">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Loop Universe</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2.5 font-button text-button rounded-lg hover:scale-105 active:scale-95 transition-all">Get Started</button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop py-stack-xl overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="z-10">
+<span class="font-label-caps text-label-caps text-primary uppercase mb-stack-sm block">Our Methodology</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-stack-md leading-tight">Precision <br/><span class="text-gradient">Execution.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-stack-lg">Our proven 4-stage engineering framework—Discovery, Design, Build, and Launch—ensures rapid iteration, absolute transparency, and scalable digital products.</p>
+</div>
+<div class="relative h-[400px] md:h-[600px] w-full rounded-xl overflow-hidden border border-surface-container shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A high-tech ultra-modern workspace with multiple large curved monitors displaying complex UI designs and code. The room features minimalist white furniture, soft ambient blue lighting, and sleek architectural lines, creating a sense of professional visionary design. High-end glass partitions and a clean aesthetic reflect a top-tier digital agency environment." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtSCOP7nhRUguPnuU4-Z5aBlMcheAVoT5IuLxbtV1AzUXLvi9xFP3LnZsRYkwP1A_hqgKUp30zg6symTbAZ6Z-DhZxWmbtVIMf4SCs8vPDtdVqF3QQs2xf5LIZ0iKqI9jqGNoxbFRzmxf1zqAsf2yKUAEWBxMRUWIDj2aMgsEFf-fLlO6AALokGlQ9sduNM-RYKooWXEZT9GIEtOknUgIpb4tK6wk_7iKe6pPd7FXANLT-3z4zcxeg1T9s');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- Process Timeline Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-stack-xl gap-stack-md">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">The Strategic Roadmap</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our process is iterative, data-driven, and focused on delivering high-performance digital products that drive real business growth.</p>
+</div>
+<div class="flex items-center gap-2 text-primary font-label-caps text-label-caps uppercase">
+<span class="">4 Phases of Excellence</span>
+<span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</div>
+</div>
+<!-- Timeline Container -->
+<div class="relative">
+<!-- Vertical Line (Desktop Only) -->
+<div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px process-line transform -translate-x-1/2"></div>
+<!-- Step 1: Discovery -->
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center mb-stack-xl group">
+<div class="lg:text-right order-2 lg:order-1">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-lowest border border-surface-container text-primary mb-stack-md lg:ml-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="travel_explore">travel_explore</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">01. Discovery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">We begin by immersing ourselves in your business ecosystem. Through deep-dive workshops and stakeholder interviews, we identify technical constraints, user pain points, and core KPIs. Our goal is to align on a vision that is both ambitious and achievable.</p>
+<ul class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap lg:justify-end gap-3">
+<li class="px-3 py-1 bg-surface-container rounded-full">USER RESEARCH</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">TECH AUDIT</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">STRATEGY</li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 flex justify-start lg:justify-start">
+<div class="w-full h-80 rounded-xl overflow-hidden glass-card p-2 group-hover:scale-[1.02] transition-transform duration-500">
+<div class="w-full h-full rounded-lg bg-cover bg-center" data-alt="A group of diverse professionals in a minimalist bright conference room collaborating around a large table. They are using post-it notes and digital tablets to map out a complex user journey. The setting is clean, modern, and professional with soft natural lighting and accents of vibrant blue in the interior design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsGIoE-WU3Z5VEFCVSh580B-fxZ6M28Kz98z0uqAfyNcVndPkCpsdkIxBDXcT57XOlNOZvfAFBjo3Bw7qDKp8A74ub2pyk9MvAFiQl6Zulq8mnDx1SWe8gwRYWhRjloZ8CYsrJI8ROtqW0e7kKW6ivHdvKEuB1TEappbXV8wlgiMC-vEaDYAxXctWzGkPqx4CX1kTQ-7goY0T4YpdMa9fbQnvMqX0KoW2FVe7WgvpoyJ5q-LAmcbd7');"></div>
+</div>
+</div>
+<!-- Marker -->
+<div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-20"></div>
+</div>
+<!-- Step 2: Design -->
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center mb-stack-xl group">
+<div class="flex justify-start lg:justify-end">
+<div class="w-full h-80 rounded-xl overflow-hidden glass-card p-2 group-hover:scale-[1.02] transition-transform duration-500">
+<div class="w-full h-full rounded-lg bg-cover bg-center" data-alt="A close-up of a designer's hands using a high-end stylus on a large interactive tablet. The screen shows a sophisticated glassmorphic UI layout with intricate typography and grid systems. The background is a blurred high-tech studio with minimalist aesthetics and warm accent lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsFHADJkcyCC6Gc-rL3t9C1lJRjhj3_QTMFynRYe54gR_l33504VL2qvMDlFxyVNeGbAaEhT_cv7hgk7yps82Imt7HEHWGYhPyxo9bYuH_vjaLwTpKSXnwDJEAkAeWq6u-2z59gp9ajYTqYLJIOWP0GhOR2WRk1PMxrxu9szXvEniRtR1qQ-HlL4b4B4kYskFK_Woi-iNt20CwGvMBzM5P_GDzcHerKyOpvBiEN_iPsE23dCxIyuF5');"></div>
+</div>
+</div>
+<div>
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-lowest border border-surface-container text-primary mb-stack-md">
+<span class="material-symbols-outlined text-3xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">02. Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Design at Loop Universe is where engineering meets aesthetics. We craft high-fidelity prototypes that go beyond visuals, focusing on kinetic energy and intuitive interaction patterns. Our design system approach ensures scalability and brand consistency across all digital touchpoints.</p>
+<ul class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap gap-3">
+<li class="px-3 py-1 bg-surface-container rounded-full">UX/UI SYSTEMS</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">PROTOTYPING</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">MOTION</li>
+</ul>
+</div>
+<!-- Marker -->
+<div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-20"></div>
+</div>
+<!-- Step 3: Development -->
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center mb-stack-xl group">
+<div class="lg:text-right order-2 lg:order-1">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-lowest border border-surface-container text-primary mb-stack-md lg:ml-auto">
+<span class="material-symbols-outlined text-3xl" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">03. Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Our developers are architects of high-performance code. We leverage modern tech stacks (React, Next.js, Node) to build robust, secure, and lightning-fast applications. We prioritize clean code architecture and seamless API integrations to ensure long-term stability.</p>
+<ul class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap lg:justify-end gap-3">
+<li class="px-3 py-1 bg-surface-container rounded-full">FULL-STACK</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">API ARCHITECTURE</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">QA TESTING</li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 flex justify-start lg:justify-start">
+<div class="w-full h-80 rounded-xl overflow-hidden glass-card p-2 group-hover:scale-[1.02] transition-transform duration-500">
+<div class="w-full h-full rounded-lg bg-cover bg-center" data-alt="A cinematic view of a server room or a high-end development workstation. Rows of glowing blue and blue LEDs highlight sleek hardware. A screen in the foreground shows clean, modular code scrolling vertically. The atmosphere is quiet, focused, and intensely technical, representing digital precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZuBSKMKhWoyGUb29u1Ye5PIneBOp1QpJwmu63xY2Taur9RbRG3xgvOeJO-LLpTgJU8yOiuqht99PYkrkaRy_MlYV3to7QHKh_6lXLrXwS7A0dkUAM1JO1y-J3uFP5mbJ9hUuFzBG8WShawtKun-E2jDKVIz2Ku9j7SushhcI8Nn0RvtOR4iFjYQ2QdrnXapSF-KAM7h06QpU8qzRMeBVhjiTaBpOoeLlvMi06th2gSeLwIddn93eo');"></div>
+</div>
+</div>
+<!-- Marker -->
+<div class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-20"></div>
+</div>
+<!-- Step 4: Delivery -->
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center group">
+<div class="flex justify-start lg:justify-end">
+<div class="w-full h-80 rounded-xl overflow-hidden glass-card p-2 group-hover:scale-[1.02] transition-transform duration-500">
+<div class="w-full h-full rounded-lg bg-cover bg-center" data-alt="A conceptual image of a rocket launch or a high-speed projectile breaking a digital barrier. The style is abstract and artistic, using long exposure light trails in vibrant blue and white against a deep charcoal background. This represents the successful launch and delivery of a powerful digital product." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAH7ES4L2AdoigKJSkpwv4COt8zb1CtSnysJ_mCr_dsPKLZUbH4vwRqZIv7vPKldDfY5sHF4u16E37EgmiJDfjbnbG29p0gEK8pgz9n7T8eF8-8ODfB05hpo4jUnPEI6-2lkCCWq9GZ5ENUzQTc32a11xI0TPC_lcaUlvFJ64lyYs_15kqXUl3K7YpWHtdcHUf9iwRfWKrGfa9JuDcd8ueobQcOz5hLTILJCSoSfRqvGRJ-dFZU-Avo');"></div>
+</div>
+</div>
+<div>
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-lowest border border-surface-container text-primary mb-stack-md">
+<span class="material-symbols-outlined text-3xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">04. Delivery</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Launch is just the beginning. We provide comprehensive deployment support, ensuring a smooth transition to your production environment. Post-launch, we monitor performance metrics and offer ongoing optimization to keep your product at the cutting edge.</p>
+<ul class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap gap-3">
+<li class="px-3 py-1 bg-surface-container rounded-full">DEPLOYMENT</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">OPTIMIZATION</li>
+<li class="px-3 py-1 bg-surface-container rounded-full">GROWTH</li>
+</ul>
+</div>
+<!-- Marker -->
+<div class="hidden lg:flex absolute left-1/2 bottom-0 -translate-x-1/2 w-4 h-4 bg-surface-container rounded-full border-4 border-background z-20"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl overflow-hidden relative">
+<div class="max-w-container-max mx-auto glass-card rounded-xl p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-stack-md relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-stack-sm">Ready to start <br/>with <span class="text-primary">Loop Universe?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Schedule a consultation with our experts and transform your complex ideas into streamlined digital experiences.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-fixed px-8 py-4 font-button text-button rounded-lg hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                        Get Started
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="border-2 border-secondary text-on-surface px-8 py-4 font-button text-button rounded-lg hover:bg-surface-container transition-all">View Our Work</button>
+</div>
+<!-- Background visual -->
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px]" data-icon="settings">settings</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-xl px-6 md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md bg-inverse-surface">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-md text-headline-md font-bold text-surface">Loop Universe</div>
+<p class="font-body-md text-body-md text-surface-dim">© 2024 Loop Universe. Engineered Creativity.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-surface-dim hover:text-white transition-colors" href="#">LinkedIn</a>
+</nav></div></footer></body></html>
+
+
