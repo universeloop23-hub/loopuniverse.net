@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoWork OS - Workshop Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        /* Custom scrollbar for data-dense areas */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #717786;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#004493",
+                    "primary": "#0058bc",
+                    "inverse-on-surface": "#eef0fc",
+                    "surface": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#0070eb",
+                    "on-secondary-fixed-variant": "#46464b",
+                    "tertiary-container": "#c64f00",
+                    "surface-tint": "#005bc1",
+                    "secondary": "#5d5e63",
+                    "surface-container-high": "#e6e8f3",
+                    "on-primary-container": "#fefcff",
+                    "on-secondary-fixed": "#1a1b1f",
+                    "surface-container-highest": "#e0e2ed",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "secondary-fixed-dim": "#c6c6cb",
+                    "surface-container": "#ecedf9",
+                    "secondary-fixed": "#e3e2e7",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f1f3fe",
+                    "on-secondary-container": "#626267",
+                    "tertiary": "#9e3d00",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#adc6ff",
+                    "secondary-container": "#e0dfe4",
+                    "surface-dim": "#d8d9e5",
+                    "on-background": "#181c23",
+                    "on-tertiary-container": "#fffbff",
+                    "outline": "#717786",
+                    "on-surface-variant": "#414755",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#c1c6d7",
+                    "primary-fixed": "#d8e2ff",
+                    "on-primary-fixed": "#001a41",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#181c23",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3039",
+                    "surface-variant": "#e0e2ed",
+                    "on-tertiary-fixed": "#351000",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin_desktop": "32px",
+                    "touch_target_min": "44px",
+                    "base_unit": "8px",
+                    "margin_mobile": "16px",
+                    "safe_area_inset": "env(safe-area-inset-bottom)",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-base": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.4px", "fontWeight": "700"}],
+                    "body-base": ["17px", {"lineHeight": "22px", "letterSpacing": "-0.4px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.4px", "fontWeight": "700"}],
+                    "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.2px", "fontWeight": "600"}],
+                    "body-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.2px", "fontWeight": "400"}],
+                    "label-caps": ["13px", {"lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background dark:bg-on-background text-on-surface dark:text-inverse-on-surface min-h-screen flex overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="flex flex-col py-8 px-4 gap-4 bg-surface-container-low dark:bg-surface-container-lowest text-primary dark:text-primary-fixed-dim border-r border-outline-variant/20 h-screen w-64 hidden md:flex shrink-0">
+<div class="mb-8 px-2">
+<h1 class="font-headline-md text-headline-md font-black text-primary">AutoWork OS</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">Workshop Manager • Station 04</p>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<!-- Dashboard (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary bg-primary-container/10 border-r-4 border-primary transition-all duration-200 ease-in-out group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">build</span>
+<span class="font-label-caps text-label-caps">Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</div>
+</nav>
+<div class="flex items-center gap-3 p-3 bg-surface-container-high/50 rounded-xl mt-4">
+<img class="w-10 h-10 rounded-full border border-primary/20 object-cover" data-alt="A professional high-resolution headshot of a workshop technician wearing a modern navy blue uniform with a subtle company logo. The lighting is crisp and cool, set against a blurred industrial background of a clean automotive shop. The man has a confident, friendly expression, representing a reliable and experienced service manager in a high-tech facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCagdZekCoFDWCFcXFtDUD8lhb2Z1NoNpMFeWsDdsC7r8TxS2Vkzy-w4Is0ymZbXsVnbpcLYhcQj52UOnB8OHf-CZQUW0aJfL_LrzRnW_1gpRFhDFVfFq7z3SQ0_1COIOyHKAvhfKzjnn2czVUAsLehcZt0NjGPCOTgg5JVLQtQFFQM3oHDLPEmdhepPihQ6RSZ7i-UvmvRCcRpqHJOaSW5G2J5_ukJlQX7KC-YJwHSqMT6Tf8jkFdpoQtm67zHrurpf9SjNFbQn7PR"/>
+<div class="overflow-hidden">
+<p class="font-label-caps text-label-caps truncate text-on-surface">Marcus Thorne</p>
+<p class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wider">Lead Engineer</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center px-margin_desktop h-touch_target_min w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl border-b border-outline-variant/30 sticky top-0">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">Dashboard Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-body-sm font-body-sm w-80 focus:ring-2 focus:ring-primary" placeholder="Search jobs, parts or VIN..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="flex-1 overflow-y-auto p-margin_desktop custom-scrollbar space-y-gutter">
+<!-- Performance Stats (Bento-ish Row) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-primary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">handyman</span>
+</div>
+<span class="text-xs font-bold text-tertiary">+12.5%</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase opacity-60">Active Jobs</p>
+<h3 class="text-display-lg font-display-lg text-on-surface">34</h3>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-tertiary-container/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">timer</span>
+</div>
+<span class="text-xs font-bold text-primary">-4.2%</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase opacity-60">Avg. Cycle Time</p>
+<h3 class="text-display-lg font-display-lg text-on-surface">2.4<span class="text-headline-md opacity-40 ml-1">hrs</span></h3>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-secondary-container/30 rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-container">payments</span>
+</div>
+<span class="text-xs font-bold text-tertiary">+8.1%</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase opacity-60">Daily Revenue</p>
+<h3 class="text-display-lg font-display-lg text-on-surface">$8,420</h3>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-error-container/20 rounded-lg">
+<span class="material-symbols-outlined text-error">priority_high</span>
+</div>
+<span class="text-xs font-bold text-error">Alert</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase opacity-60">Delayed Tasks</p>
+<h3 class="text-display-lg font-display-lg text-on-surface">03</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Monthly Performance Chart -->
+<div class="lg:col-span-8 bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Monthly Throughput</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Completed vs Scheduled Jobs</p>
+</div>
+<select class="bg-surface-container border-none text-body-sm rounded-lg py-1 px-3 focus:ring-primary">
+<option>Last 6 Months</option>
+<option>Year to Date</option>
+</select>
+</div>
+<!-- Visualization Placeholder -->
+<div class="h-64 flex items-end justify-between gap-4 pt-4 px-2">
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[40%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[60%] rounded-t-sm transition-all group-hover:h-[65%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[50%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[75%] rounded-t-sm transition-all group-hover:h-[80%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[45%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[68%] rounded-t-sm transition-all group-hover:h-[73%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[60%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[90%] rounded-t-sm transition-all group-hover:h-[95%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[55%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[82%] rounded-t-sm transition-all group-hover:h-[87%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full flex gap-1 items-end h-full">
+<div class="bg-primary-container/20 w-1/2 h-[70%] rounded-t-sm"></div>
+<div class="bg-primary w-1/2 h-[100%] rounded-t-sm transition-all group-hover:h-[100%]"></div>
+</div>
+<span class="text-[11px] font-bold uppercase text-on-surface-variant">Jun</span>
+</div>
+</div>
+</div>
+<!-- Workload Heatmap / Activity -->
+<div class="lg:col-span-4 bg-surface-container-lowest dark:bg-surface-container-lowest/5 p-6 rounded-xl border border-outline-variant/20 shadow-sm relative overflow-hidden">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Capacity</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-6">Technician Availability</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-body-sm font-medium">Brake Service Bay</span>
+</div>
+<span class="text-body-sm font-bold">92%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-tertiary w-[92%] h-full rounded-full"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-body-sm font-medium">Engine Diagnostics</span>
+</div>
+<span class="text-body-sm font-bold">65%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-primary w-[65%] h-full rounded-full"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-body-sm font-medium">General Maintenance</span>
+</div>
+<span class="text-body-sm font-bold">40%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full">
+<div class="bg-secondary w-[40%] h-full rounded-full"></div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-between">
+<div>
+<p class="text-[11px] font-bold uppercase opacity-80">Next Booking</p>
+<p class="text-body-base font-bold">14:30 - Tesla Model 3</p>
+</div>
+<span class="material-symbols-outlined">event</span>
+</div>
+</div>
+</div>
+<!-- Detailed Job Table -->
+<div class="bg-surface-container-lowest dark:bg-surface-container-lowest/5 rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Queue Management</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Manage and prioritize active repair orders</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-primary text-white px-4 py-2 rounded-lg font-label-caps text-label-caps flex items-center gap-2 hover:bg-primary-container transition-colors shadow-md active:scale-95">
+<span class="material-symbols-outlined text-base">add</span>
+                            New Repair Order
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/20">
+<th class="p-4 w-12"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Job ID</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Vehicle / Client</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Technician</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Status</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">ETA</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Job 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4 text-body-sm font-bold text-primary">RO-2849</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold">2022 Porsche 911 (992)</span>
+<span class="text-[12px] text-on-surface-variant">Jonathan Miller • #992-GT3</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Close-up of a mechanic's hand holding a high-tech digital diagnostic tablet displaying complex engine performance graphs and automotive telemetry data. The environment is a clean, modern workshop with professional tool chests and high-end sports cars in the background. Cinematic soft lighting highlights the focus on digital precision in car repair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTQ1mN1n21DKJ58S71kb8yL8QxhbsnXbovR2E5Dn2Q8VmwPA1pkCsuTNuiOmmUbP1p3D8yJh3HTSeLdSnd12UESASCfn3kcyCr7qRVNJcwAD7fx_CdB_Nsi_PX_vdApQzTnUlD-YkpJuHK5XQQl3KxYQyro1nuIK70VS8Cg2YxroAUqDA9K-T9kx4TlgDKqJK6xmj9DV91kCd8HSCiyuJQweP0kFes4Ae70JL2y4KJjNpNZP2dDBxPBLuSgd8OUGS7kqFylue3qVzV"/>
+<span class="text-body-sm">Alex R.</span>
+</div>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 bg-tertiary/10 text-tertiary text-[11px] font-bold rounded-full uppercase">In Progress</span>
+</td>
+<td class="p-4 text-body-sm text-on-surface-variant">Today, 17:00</td>
+<td class="p-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Job 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4 text-body-sm font-bold text-primary">RO-2852</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold">2023 Tesla Model S Plaid</span>
+<span class="text-[12px] text-on-surface-variant">Sarah Chen • #TSLA-001</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="A portrait of a female lead technician wearing a sleek black polo shirt with a digital ID badge. She has protective goggles pushed up on her forehead and is standing in front of an electric vehicle charging station in a bright, futuristic automotive bay. The lighting is crisp and blue-toned, emphasizing high-tech EV maintenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrc4g4CBSNovgHpdw1CKrcdYX6-KiJ6Bk0kClTtO0_HT9m7k3VDk959RxiPBB1GX4DVFzUruN2WHCMd8Wfh7qqT5Tht9i1mDwfTXMOtXw3o0tq2i409b7mDo14_juNksDqZYHcITK3lQKuyXqBW8nj6FMjIjwBMU22AmGhT3Xz1_4w9d3bY5_nw62AfIfsQTPhXcrdJhbEfSHaZ3aIKSjfPqP7gc-isG8UuUniVTUsd8FPFMK36QzBkRfkrUhErVQDlEQI-UCD9iRJ"/>
+<span class="text-body-sm">Jessica L.</span>
+</div>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 bg-primary/10 text-primary text-[11px] font-bold rounded-full uppercase">Diagnostics</span>
+</td>
+<td class="p-4 text-body-sm text-on-surface-variant">Tomorrow, 09:00</td>
+<td class="p-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Job 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="p-4"><input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/></td>
+<td class="p-4 text-body-sm font-bold text-primary">RO-2841</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-body-sm font-semibold">2020 Land Rover Defender</span>
+<span class="text-[12px] text-on-surface-variant">Mark Sterling • #OFFRD-4X4</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="A rugged-looking mechanic with some grease on his arms, leaning against a large black SUV in a professional garage. He is holding a heavy-duty wrench and looking towards the camera with a satisfied smirk after a successful repair. The lighting is warm and dramatic, highlighting the texture of the tools and the vehicle's metallic surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzSdUrViwu9vIVLVfmkHzr0-TCwUUyDp4ZAcotivfX793gfM-5VCR_104be400cgp7zE6UQvYA78BSFm4eVz_TgCz5IS3WkNq1Fb0oIG3_0N_89ProfEuDbyFJooVDHKeYPD4-oM8yY_QMyDHjXwhrqJcUwqdDKPCKOCySNM2VIEzGbJjHV2xXWyUFr8F4yKfzZEcc0f0LJxdNbdesdNWbOVCu4YntA48KowpBzE4uwwcGXhpgoybod8tRs8GRYPRIsoFSnyC0m-1D"/>
+<span class="text-body-sm">Dave K.</span>
+</div>
+</td>
+<td class="p-4">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full uppercase">Waiting Parts</span>
+</td>
+<td class="p-4 text-body-sm text-on-surface-variant">Oct 12</td>
+<td class="p-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Live Workshop Feed (Right Sidebar) -->
+<aside class="w-80 bg-surface dark:bg-on-background border-l border-outline-variant/20 hidden xl:flex flex-col h-screen overflow-hidden">
+<div class="p-6 border-b border-outline-variant/20 glass-header sticky top-0 bg-surface/90 dark:bg-on-background/90 z-10">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Live Feed</h3>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Real-time workshop activity</p>
+</div>
+<div class="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-4">
+<!-- Feed Item 1 -->
+<div class="p-4 bg-surface-container-low dark:bg-surface-container-low/5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+</div>
+<div>
+<p class="text-body-sm font-bold">Oil Change Completed</p>
+<p class="text-[13px] text-on-surface-variant mb-3">Audi A4 (#2845) is ready for pickup.</p>
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-medium text-on-surface-variant/60">2 mins ago</span>
+<span class="text-[11px] px-2 py-0.5 bg-surface-container-high rounded text-on-surface-variant">Bay 2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="p-4 bg-surface-container-low dark:bg-surface-container-low/5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-tertiary text-xl">warning</span>
+</div>
+<div>
+<p class="text-body-sm font-bold">Parts Delay</p>
+<p class="text-[13px] text-on-surface-variant mb-3">Brake pads for RO-2841 delayed by supplier.</p>
+<button class="text-primary font-bold text-[12px] hover:underline">Notify Customer</button>
+</div>
+</div>
+</div>
+<!-- Workshop Cam Preview -->
+<div class="relative group rounded-xl overflow-hidden mt-4">
+<div class="w-full h-40 bg-cover bg-center" data-alt="A grainy, wide-angle security camera view of a modern car workshop at night. Multiple cars are on hydraulic lifts, and various diagnostic machines and tool benches are organized neatly. Low-intensity fluorescent lights cast long shadows, creating a high-security, professional surveillance aesthetic of a quiet but ready-to-work facility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHM2u0gmBa0wXIm9JhVJ4Oe-PE3vwljqPZ6npBDikxmeZ-k9bFABaPOgzfNCHzn75bukSySeECXFjkXhz2LqzEOzOapSXdP_o6RjEAoONJJs9joZDjpLVrshcfqK2svuB5CehkKUW9oNOcA7PFppjPQYHiNn4zKfjGR_eOA1abG3CwbZ3B991wplLF-nh_3LrM3tAcrXBHHyUyTlu6HFVCsgo7CYPUPaGGyF_ZZng9_Zxp3QPNoGX9X_Yl-km7l-LWK8dqX8UGXuuG')"></div>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest border border-white/30">View Live Cam</button>
+</div>
+<div class="absolute top-2 left-2 bg-black/60 px-2 py-0.5 rounded text-[10px] text-white flex items-center gap-1 font-bold">
+<span class="w-1 h-1 rounded-full bg-error"></span> CAM-04
+                </div>
+</div>
+<!-- Feed Item 3 -->
+<div class="p-4 bg-surface-container-low dark:bg-surface-container-low/5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-3">
+<div class="mt-1">
+<span class="material-symbols-outlined text-secondary text-xl">person_add</span>
+</div>
+<div>
+<p class="text-body-sm font-bold">Customer Arrived</p>
+<p class="text-[13px] text-on-surface-variant mb-1">Mr. Sterling (RO-2841) in lobby.</p>
+<p class="text-[11px] font-medium text-on-surface-variant/60">15 mins ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-highest/30 border-t border-outline-variant/20">
+<button class="w-full py-3 bg-surface-container text-on-surface font-bold text-body-sm rounded-lg hover:bg-surface-container-high transition-colors">
+                Open Full Activity Log
+            </button>
+</div>
+</aside>
+<!-- FAB for Quick Actions (Dashboard Specific) -->
+<button class="fixed bottom-8 right-margin_desktop xl:right-[352px] w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center z-[60] hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<script>
+        // Simple micro-interaction for active nav states and hover effects
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') e.preventDefault();
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        if(searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-2', 'ring-primary/50');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-2', 'ring-primary/50');
+            });
+        }
+    </script>
+</body></html>

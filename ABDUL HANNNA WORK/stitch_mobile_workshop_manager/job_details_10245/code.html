@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Job Details | AutoWork OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .signature-pad {
+            background-image: radial-gradient(circle, #c1c6d7 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#004493",
+                      "primary": "#0058bc",
+                      "inverse-on-surface": "#eef0fc",
+                      "surface": "#f9f9ff",
+                      "surface-bright": "#f9f9ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#0070eb",
+                      "on-secondary-fixed-variant": "#46464b",
+                      "tertiary-container": "#c64f00",
+                      "surface-tint": "#005bc1",
+                      "secondary": "#5d5e63",
+                      "surface-container-high": "#e6e8f3",
+                      "on-primary-container": "#fefcff",
+                      "on-secondary-fixed": "#1a1b1f",
+                      "surface-container-highest": "#e0e2ed",
+                      "tertiary-fixed-dim": "#ffb595",
+                      "secondary-fixed-dim": "#c6c6cb",
+                      "surface-container": "#ecedf9",
+                      "secondary-fixed": "#e3e2e7",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f1f3fe",
+                      "on-secondary-container": "#626267",
+                      "tertiary": "#9e3d00",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#adc6ff",
+                      "secondary-container": "#e0dfe4",
+                      "surface-dim": "#d8d9e5",
+                      "on-background": "#181c23",
+                      "on-tertiary-container": "#fffbff",
+                      "outline": "#717786",
+                      "on-surface-variant": "#414755",
+                      "background": "#f9f9ff",
+                      "outline-variant": "#c1c6d7",
+                      "primary-fixed": "#d8e2ff",
+                      "on-primary-fixed": "#001a41",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#181c23",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#2d3039",
+                      "surface-variant": "#e0e2ed",
+                      "on-tertiary-fixed": "#351000",
+                      "on-tertiary-fixed-variant": "#7c2e00",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdbcc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin_desktop": "32px",
+                      "touch_target_min": "44px",
+                      "base_unit": "8px",
+                      "margin_mobile": "16px",
+                      "safe_area_inset": "env(safe-area-inset-bottom)",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "body-base": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.4px", "fontWeight": "700"}],
+                      "body-base": ["17px", {"lineHeight": "22px", "letterSpacing": "-0.4px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.4px", "fontWeight": "700"}],
+                      "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.2px", "fontWeight": "600"}],
+                      "body-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.2px", "fontWeight": "400"}],
+                      "label-caps": ["13px", {"lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface dark:bg-surface-dim text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl border-b border-outline-variant/30 docked full-width top-0 sticky flex justify-between items-center px-margin_mobile md:px-margin_desktop h-touch_target_min w-full z-50">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-colors active:scale-95 duration-100 rounded-full" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface">Job #JW-9821</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="hidden md:block font-label-caps text-label-caps px-3 py-1 bg-tertiary-container/20 text-tertiary-container rounded-full">In Progress</span>
+<button class="flex items-center justify-center w-touch_target_min h-touch_target_min text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</button>
+<button class="flex items-center justify-center w-touch_target_min h-touch_target_min text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-full">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin_mobile md:px-margin_desktop py-8 pb-32">
+<!-- Hero Header Card (Asymmetric Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="md:col-span-2 bg-surface-container-lowest dark:bg-surface-container-low p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-caps text-label-caps text-primary tracking-widest block mb-1">MACHINE DETAILS</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">2023 Caterpillar 320 GC</h2>
+</div>
+<div class="p-3 bg-primary/10 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SERIAL NO</span>
+<span class="font-body-base text-body-base font-semibold">CAT0320GCN-8812</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ENGINE HOURS</span>
+<span class="font-body-base text-body-base font-semibold">1,240 hrs</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LOCATION</span>
+<span class="font-body-base text-body-base font-semibold">Bay 04</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">NEXT SERVICE</span>
+<span class="font-body-base text-body-base font-semibold text-tertiary">50 hrs</span>
+</div>
+</div>
+</div>
+<!-- Customer Quick Info -->
+<div class="bg-primary text-on-primary p-6 rounded-xl shadow-lg flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps opacity-80 block mb-1">CUSTOMER</span>
+<h3 class="font-headline-md text-headline-md mb-4">Apex Earthworks Ltd.</h3>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="font-body-sm text-body-sm">Mark Thompson (Manager)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">phone</span>
+<span class="font-body-sm text-body-sm">+44 20 7946 0123</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mt-6">
+<button class="flex-1 bg-on-primary text-primary h-touch_target_min rounded-lg font-label-caps flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined">call</span>
+                        Call
+                    </button>
+<button class="flex-1 border border-on-primary/30 text-on-primary h-touch_target_min rounded-lg font-label-caps flex items-center justify-center gap-2 hover:bg-on-primary/10 transition-colors active:scale-95">
+<span class="material-symbols-outlined">chat</span>
+                        WhatsApp
+                    </button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Gallery & Logs -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Photo Gallery (Grid Layout) -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Inspection Gallery</h3>
+<button class="flex items-center gap-2 text-primary font-label-caps hover:bg-primary-container/10 px-4 py-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">photo_camera</span>
+                            Add Photo
+                        </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-resolution photograph of a massive industrial Caterpillar excavator engine bay in a professional workshop. The lighting is bright and industrial, highlighting the intricate hydraulic lines and metallic textures. The image uses a clean, modern aesthetic with sharp focus and professional depth of field, adhering to a high-contrast dark mode UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS3mR3UjEPSMu9CHqODF1OHaUIfRm2bgQJES798TY8LiQNxc2WnvlJtdN03QKViFxl7T126tBB0fTWADbgyCRKqbPmaQ-ewiZB9jzgiNQ9Xw69oe9mXdZ5YSrx6j_61K5jVfXkzldCHZhdqOQFEzJZu9iTpAN9CXSP12De6agVULs67SB9HkHj0enHhSlhCsir6_Eevb0n0CQEXJFe75bu-WsLlThc3pdkn6uDGn89zVhnAnHVf7ZFPXqG1H4QNTjApWJ5GXd6n6xV"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up shot of heavy-duty hydraulic cylinders on an excavator arm, showing signs of wear and fluid leakage. The workshop setting provides a professional, technical background with subtle blue-toned lighting. The image style is sharp, clean, and highly detailed, emphasizing industrial reliability and maintenance tasks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmv7OlLceg6zam33i34lLPpHeBrF_n3DizKLYubKsuSRLUWJPY-JVjp_bbChmrLJ866zFvrrPJQe--QRxGKim6F08xET46cg0IsJLRGudBNYI2Kn6TtEQhv46026ncbdMxO-YDHYmZ_5NvkxC9-YdvX-L76VKfilrK7WWpOO_vcmhmyyx7BftdfF6OdhLLIpDY-R85FcjO1meF3Vh68guIfDOjhBqUDYQ9jwYnvS6ylT6wY_h1et4-8NyXqsa8O6jUyJts79Nwr2oq"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Macro view of a digital diagnostic tablet connected to a vehicle's port in a dark workshop. The tablet screen glows with technical charts and data in primary blue. The aesthetic is futuristic and high-utility, with soft-focus workshop tools in the background, maintaining a professional glassmorphism-inspired theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8nJdaCA_-96-7jJNSkV5vwbMAewVo5vWqCYrKlwy2nT5qsYnPWsZ7RXwWnf-r_hVb-WY_ASanRCTSk15lDecIVl3RLxTvr3YxQunP_B_pQJzbeFz4uUuhTRJ0Qin3RweKR9IZR5Efp4ku0Ep3hZwnJXm_EQFnNLfvLCWbWYFqIMMQpcLueb51jNfKdMhRnW9E3bkXolJHnGaHvgXq8-RCtqZ7TenWDsob2LTUen3KIaHixOuC34IecYXsfK8GQTg2Jz9g76xLF2-"/>
+</div>
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-3xl mb-2">add_a_photo</span>
+<span class="font-label-caps text-xs">UPLOAD</span>
+</div>
+</div>
+</section>
+<!-- Repair Logs (Chronological Notes) -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Repair History &amp; Logs</h3>
+<div class="space-y-4">
+<!-- Log Item -->
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center border border-primary/30 z-10">
+<span class="material-symbols-outlined text-primary text-sm">build</span>
+</div>
+<div class="w-0.5 h-full bg-outline-variant/30 -mt-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 pb-6">
+<div class="bg-surface-container-lowest dark:bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-2">
+<h4 class="font-body-base font-semibold text-on-surface">Main Hydraulic Pump Seal Replacement</h4>
+<span class="font-label-caps text-xs text-on-surface-variant">Today, 10:24 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Technician identified a primary seal failure on the main pump. Parts requested via QR scanner. New seals installed and pressure tested to 350 bar. No leaks observed.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-0.5 bg-surface-container-highest rounded text-[11px] font-medium uppercase tracking-tight">Parts Replaced</span>
+<span class="px-2 py-0.5 bg-surface-container-highest rounded text-[11px] font-medium uppercase tracking-tight">System Test</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Log Item -->
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 z-10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+</div>
+<div class="w-0.5 h-full bg-outline-variant/30 -mt-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 pb-6">
+<div class="bg-surface-container-lowest dark:bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-2">
+<h4 class="font-body-base font-semibold text-on-surface">Initial Diagnostic Scan</h4>
+<span class="font-label-caps text-xs text-on-surface-variant">Yesterday, 03:45 PM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Connected diagnostic interface. Error code H-102 (Hydraulic Pressure Variance) triggered. Manual inspection confirmed localized leakage.</p>
+</div>
+</div>
+</div>
+<button class="w-full h-12 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center gap-2 text-on-surface-variant font-label-caps hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">add</span>
+                            Add Technical Note
+                        </button>
+</div>
+</section>
+</div>
+<!-- Right Column: Actions & Approval -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Quick Actions Card -->
+<div class="bg-surface-container-low dark:bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 tracking-widest">WORKSHOP ACTIONS</h3>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center gap-4 p-4 bg-surface dark:bg-surface-dim rounded-xl border border-outline-variant/20 hover:border-primary/50 transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<div class="text-left">
+<span class="block font-body-base font-bold text-on-surface">Scan Part QR</span>
+<span class="block text-xs text-on-surface-variant">Register parts to job</span>
+</div>
+</button>
+<button class="flex items-center gap-4 p-4 bg-surface dark:bg-surface-dim rounded-xl border border-outline-variant/20 hover:border-tertiary/50 transition-all active:scale-95 group">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="text-left">
+<span class="block font-body-base font-bold text-on-surface">Generate PDF</span>
+<span class="block text-xs text-on-surface-variant">Full diagnostic report</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Approval Section -->
+<div class="bg-surface-container-lowest dark:bg-surface-container-low p-6 rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Customer Approval</h3>
+<p class="font-body-sm text-on-surface-variant mb-6">Authorize repairs and confirm receipt of the preliminary estimate.</p>
+<div class="relative w-full aspect-[3/2] bg-surface dark:bg-surface-dim rounded-lg border-2 border-outline-variant/20 mb-4 signature-pad flex items-center justify-center group">
+<canvas class="absolute inset-0 w-full h-full cursor-crosshair" id="signature-canvas"></canvas>
+<div class="pointer-events-none text-on-surface-variant/30 flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-1">edit_note</span>
+<span class="font-label-caps text-xs">SIGN HERE</span>
+</div>
+<button class="absolute bottom-2 right-2 p-2 rounded-md hover:bg-surface-container-highest text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity" onclick="clearSignature()">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+<div class="space-y-4">
+<label class="flex items-start gap-3 cursor-pointer">
+<input class="w-5 h-5 mt-0.5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-body-sm text-on-surface-variant leading-tight">I agree to the terms of service and authorize the work specified above.</span>
+</label>
+<button class="w-full bg-primary text-on-primary h-14 rounded-xl font-body-base font-bold shadow-lg shadow-primary/20 hover:bg-primary-container transition-colors active:scale-95">
+                            Submit Job for Billing
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Floating, Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full p-margin_mobile z-40">
+<div class="bg-surface-container-highest/80 glass-panel border border-outline-variant/30 rounded-2xl p-4 flex gap-4 shadow-2xl">
+<button class="flex-1 bg-primary text-on-primary h-12 rounded-xl font-label-caps flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                APPROVE
+            </button>
+<button class="w-12 h-12 rounded-xl bg-surface-container-lowest dark:bg-surface-container-low border border-outline-variant/20 text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Background Decoration (Atmospheric Shader-like) -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+<div class="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-tertiary/5 rounded-full blur-[120px]"></div>
+</div>
+<script>
+        // Simple Signature Canvas Logic
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        function resizeCanvas() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--on-surface') || '#181c23';
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startDrawing(e.touches[0]); });
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        function startDrawing(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.pageX) - rect.left;
+            const y = (e.clientY || e.pageY) - rect.top;
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Active State Logic for Top Bar (Simulated)
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('scale-95');
+                setTimeout(() => this.classList.remove('scale-95'), 100);
+            });
+        });
+    </script>
+</body></html>
